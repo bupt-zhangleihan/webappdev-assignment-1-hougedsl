@@ -1,0 +1,71 @@
+想象你正在搭建一个购物车。写一个文档，描述一下为了完成你的购物之旅你可能会用到哪些数据类型。你是如何得出这些选择的？
+想象你正在搭建一个购物车，购物车存储的商品信息包括：商品ID、商品名、商品型号、价格、数量、折扣等。写一个文档，描述一下为了完成你的购物之旅你可能会用到哪些数据类型。你是如何得出这些选择的？
+1. 字符串:
+   商品ID：主码，可以使用字符串类型来存储。
+   商品名：商品的名称，也是字符串类型。
+   商品型号：商品的型号或规格，也是字符串类型。
+2. 数字:
+   价格：商品的价格是数字表示，可以使用数值类型来存储。
+   数量：购物车中每种商品的数量也是数字，使用数值类型来存储。
+   折扣：折扣可以用数字表示，也适合使用数值类型。
+3. 对象:
+   可以使用对象来组织商品信息。每个商品可以用一个对象表示，包括商品ID、商品名、商品型号、价格、数量、折扣等属性。
+4. 数组:
+   购物车中通常包含多个商品，因此可以使用数组来存储购物车中的商品列表。每个元素都是一个对象。
+
+创建一个会返回什么东西的函数，再创建一个不会返回任何东西的函数。
+function add(a, b) {
+  return a + b;
+}
+const result = add(0, 0);
+console.log(result); 
+//有返回的函数
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+greet('world');
+//无返回的函数
+
+创建一个能够计算三角形面积的函数，再创建一个在控制台打印给定两个数值之间所有素数的函数。
+function cal(a, b) {
+    const s = 0.5 * a * b;
+    return s;
+  }
+  const a = parseFloat(prompt("输入三角形的底："));
+  const b = parseFloat(prompt("输入三角形的高："));
+  const triangleArea = cal(a, b);
+  console.log(`三角形的面积是：${triangleArea}`);
+//能够计算三角形面积的函数
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+readline.question("输入较小的数字：", (num1) => {
+    readline.question("输入较大的数字：", (num2) => {
+        printPrimesBetweenNumbers(Number(num1), Number(num2));
+        readline.close();
+    });
+});
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+    return true;
+}
+function printPrimesBetweenNumbers(num1, num2) {
+    let primes = [];
+    for (let i = num1; i <= num2; i++) {
+        if (isPrime(i)) {
+            primes.push(i);
+        }
+    }
+    if (primes.length === 0) {
+        console.log("none");
+    } else {
+        console.log("这两个数字之间的素数为: " + primes.join(", "));
+    }
+}
+//一个在控制台打印给定两个数值之间所有素数的函数
