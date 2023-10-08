@@ -8,8 +8,8 @@ h1 {
 }
 
 #left-container {
-	left: 50%; /* 设置 left 为 50% */
-	transform: translateX(-50%); /* 使用 transform 属性将左侧容器水平居中 */
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
 	flex-direction: row;
 	top: 450px;
@@ -17,8 +17,8 @@ h1 {
 }
   
 #right-container {
-	right: 50%; /* 设置 right 为 50% */
-	transform: translateX(50%); /* 使用 transform 属性将右侧容器水平居中 */
+	right: 50%;
+	transform: translateX(50%);
 	display: flex;
 	flex-direction: row;
 	top: 600px;
